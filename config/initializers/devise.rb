@@ -4,7 +4,7 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  # config.secret_key = '8d148ffcb4924a981ff749c23c416ed8d496eac6bf542ac8581b869d4a601380d5f1cd471d80a9c8ba2ccae7682b4cc13562b3c317822ebc4e5c26279dc08cbc'
+  config.secret_key = 'dfcfb3bdc7bd56727cd12593f3b0ed00388ce5c0efb919a13ec3b33aab3fc9608dc721a4adb62678b3f57b19d90ad37aaae63d26e70839874dd0ec44931d534b'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -13,7 +13,7 @@ Devise.setup do |config|
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
-  # config.mailer = 'Devise::Mailer'
+  config.mailer = 'Devise::Mailer'
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
@@ -52,7 +52,7 @@ Devise.setup do |config|
   # It can be set to an array that will enable params authentication only for the
   # given strategies, for example, `config.params_authenticatable = [:database]` will
   # enable it only for database (email + password) authentication.
-  # config.params_authenticatable = true
+  config.params_authenticatable = true
 
   # Tell if authentication through HTTP Auth is enabled. False by default.
   # It can be set to an array that will enable http authentication only for the
@@ -97,7 +97,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '0540af78effa66bb06052524f1f311c2bcbdcecf67816ccf7c5743249056068c05edd81bc73045757199165223642c8da3bb2676b078101fce5042b5aa00fe11'
+  config.pepper = '0dc80b70488e49abe122557048156f9fa03e77606f51ff222f1c8eeea4e0a1c50a4be6601370cd7739faed7b04053990dea614e0d25856f745841e22567d0cab'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -145,7 +145,7 @@ Devise.setup do |config|
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
   # to give user feedback and not to assert the e-mail validity.
-  # config.email_regexp = /\A[^@]+@[^@]+\z/
+  config.email_regexp = /\A[^@]+@[^@]+\z/
 
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
@@ -162,7 +162,7 @@ Devise.setup do |config|
   # config.lock_strategy = :failed_attempts
 
   # Defines which key will be used when locking and unlocking an account
-  # config.unlock_keys = [ :email ]
+  config.unlock_keys = [ :email ]
 
   # Defines which strategy will be used to unlock an account.
   # :email = Sends an unlock link to the user email

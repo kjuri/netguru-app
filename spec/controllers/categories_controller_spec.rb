@@ -45,7 +45,7 @@ describe CategoriesController do
     describe 'PUT update' do
       it 'redirect user to the login page' do
         category = Category.create! valid_attributes
-        put :update, {:id => category.to_param, :category => { 'name' => 'MyString'}}, valid_session
+        put :update, {id: category.to_param, category:{ name: 'MyString'}}, valid_session
         expect(response).to redirect_to(new_user_session_path)
       end
     end
