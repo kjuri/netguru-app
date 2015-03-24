@@ -55,8 +55,7 @@ class ProductsController < ApplicationController
     if self.product.user == current_user
       true
     else
-      flash[:error] = 'You are not allowed to edit this product.'
-      redirect_to category_product_url(category, product)
+      redirect_to category_product_url(category, product), error: 'You are not allowed to edit this product.'
     end
   end
 end

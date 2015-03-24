@@ -14,8 +14,17 @@
         .navbar-header
           %span.navbar-brand #{AppConfig.workshops_name}
         %p.navbar-text.navbar-right
-          Links should go here
+          - if user_signed_in?
+            %span.nav_user= "You are logged in as: #{current_user.firstname} #{current_user.lastname}. "
+            = link_to 'Log out', logout_url
+          - else
+            = link_to 'Log in', login_url
+
     .container-fluid
+      .row
+        .col-lg-12
+          - flash.each do |key, value|
+            .alert{class: key}= value
       .row
         .col-lg-12
           = yield

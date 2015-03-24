@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2382811441">
+    <data-source source="LOCAL" name="Rails workshops: development" uuid="072e3c83-8a26-4438-ab33-2919c2dde2db">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:3000/workshops_development</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails workshops: test" uuid="083f4538-0e51-4703-ab81-8642c1c9af1c">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/workshops_test</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
