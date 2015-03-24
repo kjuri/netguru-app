@@ -45,4 +45,12 @@ class CategoriesController < ApplicationController
     def category_params
       params.require(:category).permit(:name)
     end
+
+  def authorize_user!
+    if user_signed_in? && current_user.admin?
+      true
+    else
+      redirect_to new_user_session_path, notice: 'You are not an admin! Go away! Or... log in with admin credentials.'
+    end
+  end
 end
