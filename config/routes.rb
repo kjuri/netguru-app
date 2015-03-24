@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'categories#index'
 
   devise_scope :user do
-    match 'users/sign_in' => 'devise/sessions#new', as: :login, via: [:post, :get]
+    get 'users/sign_in', to: 'devise/sessions#new', as: :login
+    get 'users/register', to: 'devise/registrations#new', as: :register
   end
 end
