@@ -15,7 +15,7 @@
           %span.navbar-brand #{AppConfig.workshops_name}
         %p.navbar-text.navbar-right
           - if user_signed_in?
-            %span.nav_user= "You are logged in as: #{current_user.firstname} #{current_user.lastname}. "
+            %span.nav_user= "You are logged in as: #{current_user.fullname}. "
             = link_to 'Log out', logout_url
           - else
             = link_to 'Log in', login_url
