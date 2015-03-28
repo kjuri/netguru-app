@@ -52,9 +52,7 @@ class ProductsController < ApplicationController
   end
 
   def authorize_user!
-    if self.product.user == current_user
-      true
-    else
+    unless self.product.user == current_user
       flash[:error] = 'You are not allowed to edit this product.'
       redirect_to category_product_url(category, product)
     end

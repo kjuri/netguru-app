@@ -47,9 +47,7 @@ class CategoriesController < ApplicationController
     end
 
   def authorize_user!
-    if user_signed_in? && current_user.admin?
-      true
-    else
+    unless admin_logged?
       redirect_to new_user_session_path, notice: 'You are not an admin! Go away! Or... log in with admin credentials.'
     end
   end

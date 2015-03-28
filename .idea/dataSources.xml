@@ -5,7 +5,7 @@
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:3000/workshops_development</jdbc-url>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/workshops_development</jdbc-url>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails workshops: test" uuid="083f4538-0e51-4703-ab81-8642c1c9af1c">

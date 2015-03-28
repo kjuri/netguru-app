@@ -6,15 +6,20 @@ class ApplicationController < ActionController::Base
   end
 
   protect_from_forgery with: :exception
-
   def current_user
     UserDecorator.decorate(super) unless super.nil?
   end
 
+  def admin_logged?
+    user_signed_in? && current_user.admin?
+  end
+
+  helper_method :admin_logged?
+
   protected
 
   def authorize_user!
-    if user_signed_in? && current_user.admin?
+    if admin_logged?
       true
     else
       redirect_to root_url, notice: 'You are not an admin! Go away! Or... log in with admin credentials.'
