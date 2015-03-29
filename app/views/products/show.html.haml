@@ -1,23 +1,19 @@
-%p
-  %b Title:
-  = product.title
-%p
-  %b Description:
-  = product.description
-%p
-  %b Price:
-  = product.price
+.product-box
+  .row
+    .col-lg-4.product-image{style: "background-image: url(#{product.image});"}
+    .col-lg-8.product-inner-box
+      .row.product-title
+        %h1= product.title
+      .row.product-description
+        %h2= product.description
+      .row.product-price
+        %h2= "Price: #{product.price}$"
+      .row.product-reviews
+        %h3 Reviews
+        = render 'reviews/form'
+        = render reviews
+      .row.product-buttons
+        - if admin_logged? || product.user == current_user
+          = link_to 'Edit', edit_category_product_path(category.id, product.id), class: 'btn btn-warning btn-block'
 
-%p
-  %b Category
-  = product.category.name
-
-%h3 Reviews
-= render 'reviews/form'
-
-= render reviews
-
-- if admin_logged? || product.user == current_user
-  = link_to 'Edit', edit_category_product_path(category.id, product.id), class: 'btn'
-
-= link_to 'Back', category_products_path, class: 'btn btn-primary'
+        = link_to 'Back', category_products_path, class: 'btn btn-primary btn-block'

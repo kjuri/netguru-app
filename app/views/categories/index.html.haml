@@ -1,20 +1,22 @@
-%h1 Categories
+%h1#category-page-header Categories
+- i = 0
+- categories.each do |category|
+  - if i % 4 == 0
+    .row
+  .col-lg-3.cat-box{id: "cat-#{i}"}
+    = link_to category, class: 'cat-link' do
+      %h2.cat-name= category.name
+      = image_tag(category.thumbnail, class: 'img-circle cat-img')
+      .cat-count-box{id: "cat-count-cat-#{i}"}
+        %h3.cat-count= category.products.count
+        %h4.cat-count-desc products
+    - if admin_logged?
+      = link_to edit_category_path(category) do
+        %span.glyphicon.glyphicon-wrench
+      = link_to category, method: :delete, data: { confirm: 'Are you sure?' } do
+        %span.glyphicon.glyphicon-remove
+  - i = i + 1
 
-%table.table
-  %tr
-    %th Name
-    %th
-    %th
-    %th
-
-  - categories.each do |category|
-    %tr
-      %td= category.name
-      %td= link_to 'Show products', category
-      - if admin_logged?
-        %td= link_to 'Edit', edit_category_path(category)
-        %td= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
+.col-lg-12
   - if admin_logged?
     = link_to 'New Category', new_category_path, class: 'btn btn-primary'

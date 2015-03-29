@@ -1,3 +1,144 @@
 @import "bootswatch/cosmo/variables";
 @import "bootstrap";
 @import "bootswatch/cosmo/bootswatch";
+
+a.profile {
+  margin-right: 25px;
+}
+
+div.user_remember_me label, div.user_remember_me input {
+  vertical-align: middle;
+}
+
+div.user_remember_me label {
+  margin-right: 25px;
+}
+
+form.new_user, .login {
+  max-width: 500px;
+  margin: auto;
+}
+
+h2.login {
+  margin-bottom: 25px;
+}
+
+.cat-box, .products-box {
+  text-align: center;
+  position: relative;
+  height: 350px;
+}
+
+.cat-img, .product-img {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  margin-left: -125px;
+}
+
+a:hover {
+  text-decoration: none;
+  text-underline: none;
+}
+
+.cat-count-box, .product-desc-box {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  margin-left: -125px;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 20;
+  text-align: center;
+  color: rgb(200, 200, 200);
+}
+
+.cat-count, .product-price {
+  margin-top: 90px;
+  font-size: 36px;
+}
+
+h1 {
+  font-size: 52px;
+  letter-spacing: -5px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+h2 {
+  font-size: 36px;
+  letter-spacing: -3px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.category-background {
+  width: 100%;
+  height: 250px;
+  background-position: center center;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  z-index: 30;
+}
+
+.cat-header {
+  margin-top: 100px;
+  color: rgba(210, 210, 210, 0.8);
+  z-index: 1;
+}
+
+#category-page-header {
+  margin-top: 100px;
+  color: rgb(0, 0, 0);
+}
+
+.cat-header.cat-0 {
+  color: rgba(100, 100, 100, 0.8);
+}
+
+.products-list-box {
+  margin-top: 300px;
+}
+
+.navbar {
+  z-index: 99;
+  position: fixed;
+  width: 100%;
+}
+
+.product-box {
+  margin-top: 75px;
+  height: 100vh;
+  text-align: center;
+}
+
+.product-image {
+  height: 100vh;
+  width: 100%;
+  background-position: center center;
+  background-size: cover;
+  margin-top: -25px;
+  position: fixed;
+  float: none;
+}
+
+.product-inner-box {
+  padding-left: 50px;
+  padding-right: 50px;
+  float: right;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding-top: 25px;
+  min-height: 100vh;
+}
+
+.product-reviews, .product-buttons {
+  max-width: 600px;
+  margin: auto;
+}

@@ -1,17 +1,18 @@
-%p#notice= notice
+.row
+  .col-lg-12.category-background{style: "background-image: url(#{category.image});"}
+    %h1.cat-header{class: "cat-#{category.id}"}= category.name
 
-%p
-  %b Name:
-  = category.name
-
-%p
+.products-list-box
+  %h2 Products:
+  - i = 0
   - category.products.each do |product|
-    = product.title
-
-%p
-  %h3 New product
-  = render 'products/form'
-
-= link_to 'Edit', edit_category_path(category)
-\|
-= link_to 'Back', categories_path, class: 'btn btn-primary'
+    - if i % 4 == 0
+      .row
+    .col-lg-3.products-box{id: "product-#{i}"}
+      = link_to category_product_path(category, product), class: 'product-link' do
+        %h2.product-title= product.title
+        = image_tag(product.thumbnail, class: 'img-circle product-img')
+        .product-desc-box{id: "product-desc-product-#{i}"}
+          %h3.product-price= "Price: #{product.price} $"
+          %h4.product-rating= "Rating: #{product.average_rating}"
+    - i = i + 1
