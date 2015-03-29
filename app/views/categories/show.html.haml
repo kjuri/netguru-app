@@ -3,6 +3,8 @@
     %h1.cat-header{class: "cat-#{category.id}"}= category.name
 
 .products-list-box
+  - if user_signed_in?
+    = link_to 'Add new product in this category', new_category_product_path(category), class: 'btn btn-primary new-product-button'
   %h2 Products:
   - i = 0
   - category.products.each do |product|

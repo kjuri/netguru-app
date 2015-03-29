@@ -22,6 +22,7 @@ class ProductsController < ApplicationController
 
   def create
     self.product = Product.new(product_params)
+    self.product.user_id = current_user.id
 
     if product.save
       category.products << product
@@ -48,7 +49,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :price, :category_id)
+    params.require(:product).permit(:title, :description, :price, :category_id, :thumbnail, :image, :user_id)
   end
 
   def authorize_user!

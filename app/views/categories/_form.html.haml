@@ -9,5 +9,11 @@
   .form-group
     = f.label :name
     = f.text_field :name, class: 'form-control'
+  .form-group
+    = f.label :thumbnail, 'URL to thumbnnail'
+    = f.text_field :thumbnail, class: 'form-control'
+  .form-group
+    = f.label :image, 'URL to image'
+    = f.text_field :image, class: 'form-control'
 
-  = f.submit 'Save', class: 'btn btn-default'
+  = f.submit 'Save', class: 'btn btn-default btn-block'

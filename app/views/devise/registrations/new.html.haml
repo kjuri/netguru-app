@@ -1,4 +1,4 @@
-%h2 Sign up
+%h2.signup-header Sign up
 = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = f.error_notification
   .form-inputs
@@ -7,6 +7,7 @@
     = f.input :password_confirmation, required: true
     = f.input :firstname, required: true
     = f.input :lastname, required: true
+    = f.input :avatar, hint: 'Paste here URL of your avatar'
   .form-actions
-    = f.button :submit, "Sign up"
+    = f.button :submit, 'Sign up', class: 'btn-block'
 = render "devise/shared/links"

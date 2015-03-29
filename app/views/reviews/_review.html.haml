@@ -1,4 +1,6 @@
-%p= review.content
-%p
-  %b= review.rating
-  %em= review.author
+.review-box
+  %p.review-content= review.content
+  %p
+    %strong.review-rating= "Rating: #{review.rating}/5"
+    =" Added on #{review.date} by "
+    %em= link_to review.author, user_path(review.user)

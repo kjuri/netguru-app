@@ -6,14 +6,14 @@
         %h1= product.title
       .row.product-description
         %h2= product.description
+        %h2= product.thumbnail
       .row.product-price
         %h2= "Price: #{product.price}$"
-      .row.product-reviews
-        %h3 Reviews
-        = render 'reviews/form'
-        = render reviews
       .row.product-buttons
         - if admin_logged? || product.user == current_user
           = link_to 'Edit', edit_category_product_path(category.id, product.id), class: 'btn btn-warning btn-block'
-
+      .row.product-reviews
+        %h3 Reviews
+        = render reviews
+        = render 'reviews/form'
         = link_to 'Back', category_products_path, class: 'btn btn-primary btn-block'

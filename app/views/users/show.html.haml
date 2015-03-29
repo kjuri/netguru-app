@@ -1,0 +1,28 @@
+.user-profile.row
+  .col-lg-4
+    - if @user.avatar
+      = image_tag(@user.avatar, class: 'img-circle user-avatar')
+
+    %h1.user-header= @user.fullname
+  .col-lg-4
+    %h2= "Info about #{@user.firstname}"
+    %h3= "E-mail: #{@user.email}"
+    %br
+    %h3= "Joined: #{@user.join_date}"
+    - if @user.last_sign_in_at
+      %h3= "Last sign in: #{@user.last_seen}"
+    %br
+    %h2= 'Statistics'
+    %h3= "Products: #{@user.products.count}"
+    %h3= "Reviews: #{@user.reviews.count}"
+    %h3= "Average product rating: #{number_with_precision(@user.average_rating, precision: 2)}"
+  .col-lg-4
+    %h2 Recent reviews
+    - @user.recent_reviews.each do |review|
+      .review-box.user-reviews-box
+        %p.review-content= review.content
+        %p
+          %strong.review-rating= "Rating: #{review.rating}/5"
+          =" Added on #{review.created_at.strftime('%d-%m-%y')}"
+        = link_to review.product.title, category_product_path(review.product.category, review.product)
+

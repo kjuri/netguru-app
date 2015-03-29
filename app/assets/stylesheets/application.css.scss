@@ -21,6 +21,7 @@ form.new_user, .login {
 
 h2.login {
   margin-bottom: 25px;
+  margin-top: 75px;
 }
 
 .cat-box, .products-box {
@@ -56,6 +57,13 @@ a:hover {
   z-index: 20;
   text-align: center;
   color: rgb(200, 200, 200);
+}
+
+.cat-admin-buttons {
+  z-index: 50;
+  position: relative;
+  top: 60%;
+  left: -100px;
 }
 
 .cat-count, .product-price {
@@ -114,19 +122,18 @@ h2 {
 }
 
 .product-box {
-  margin-top: 75px;
+  margin-top: 50px;
   height: 100vh;
   text-align: center;
 }
 
 .product-image {
   height: 100vh;
-  width: 100%;
+  min-width: 500px;
   background-position: center center;
   background-size: cover;
   margin-top: -25px;
   position: fixed;
-  float: none;
 }
 
 .product-inner-box {
@@ -141,4 +148,74 @@ h2 {
 .product-reviews, .product-buttons {
   max-width: 600px;
   margin: auto;
+}
+
+.review-box {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: 1px solid rgb(25, 25, 25);
+}
+
+.review-rating {
+  font-size: 14px;
+  padding-right: 25px;
+}
+
+#new_review {
+  padding-top: 25px;
+}
+
+.user-profile {
+  text-align: center;
+  margin-top: 125px;
+}
+
+.user-avatar {
+  height: 300px;
+  width: 300px;
+}
+
+.user-reviews-box {
+  max-width: 400px;
+  margin: auto;
+}
+
+.edit-header, .signup-header, .new-header {
+  margin-top: 75px;
+}
+
+.edit-page, .new-page {
+  max-width: 600px;
+  margin: auto;
+}
+
+.btn-back {
+  margin-top: 0 !important;
+}
+
+.new-product-button, .new-category-button {
+  width: 250px;
+  position: relative;
+  left: 50%;
+  margin-left: -125px;
+}
+
+.new-category-button {
+  margin-top: 75px;
+}
+
+.alert, .notice, .error {
+  margin-top: 75px;
+  max-width: 600px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.notice, .alert {
+  background-color: rgba(0, 250, 0, 0.8);
+}
+
+.error {
+  background-color: rgba(250, 250, 0, 0.8);
 }

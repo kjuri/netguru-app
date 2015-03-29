@@ -1,5 +1,6 @@
-%h1 New product
+.new-page
+  %h1.new-header New product
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Back', category_products_path
+  = link_to 'Back', category_products_path, class: 'btn btn-default btn-block btn-back'
